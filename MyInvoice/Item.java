@@ -1,3 +1,5 @@
+package MyInvoice;
+
 public class Item {
         private String itemId;
         private String itemName;
