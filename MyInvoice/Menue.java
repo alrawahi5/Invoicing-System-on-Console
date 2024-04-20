@@ -120,6 +120,9 @@ static void manageShopItemsMenu(Scanner scanner) {
 
     static ShopSettings shopSettings1 = new ShopSettings();
     static Invoice invoice1 = new Invoice();
+    static Item item1 = new Item();
+    static Menue menu1 = new Menue();
+    static InvoicingSystem invoSy1 = new InvoicingSystem();
 static void createNewInvoice(Scanner scanner) {
 
 }
@@ -164,8 +167,10 @@ static void loadData(Scanner scanner) {
     invoice1.invoiceDate = invoDate;
     System.out.println("Invoice date: " + invoDate);
 
+    //(for int i = 0; i<invoSy1.)
     System.out.println("Added Items: " + invoice1.items);
 
+    //use the random class for the item amount then sum them up
     System.out.println("The total amout: " + invoice1.totalAmount);
 
     System.out.println("The paid amount is: " + invoice1.paidAmount);
