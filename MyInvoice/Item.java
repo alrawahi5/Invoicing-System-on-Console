@@ -1,10 +1,20 @@
 package MyInvoice;
 
 public class Item {
-        public String itemId;
-        public String itemName;
-        public double unitPrice;
-        public int quantity;
+    public double itemId;
+    public String itemName;
+    public double unitPrice;
+    public int quantity;
 
-        // add anything else? ...
+    @Override
+    public String toString() {
+        return "Item{" +
+                "itemId='" + itemId + '\'' +
+                ", itemName='" + itemName + '\'' +
+                ", unitPrice=" + unitPrice +
+                ", quantity=" + quantity +
+                '}';
+    }
+
+    // add anything else? ...
 }
