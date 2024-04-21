@@ -185,6 +185,24 @@ public class Menue {
 
     static void addItems(Scanner scanner) {
 
+        while (true) {
+            System.out.println("What are you buying? When you are done, type " + "done ");
+            String input = scanner.nextLine();
+            if (input.equals("done")) {
+                break;
+            }
+            Item obj = new Item();
+            obj.itemName = input;
+            obj.itemId = (int) (Math.random() * (253 - 1 + 1) + 1);
+            obj.unitPrice = (int) (Math.random() * (5 - 1 + 1) + 1);
+            System.out.println("How many " + obj.itemName + " do you want? ");
+            obj.quantity = scanner.nextInt();
+            scanner.nextLine();
+
+            invoSy1.items.add(obj);
+        }
+        Menue.invoice1.items = invoSy1.items;
+        invoSy1.items.toString();
     }
 
     static void deleteItems(Scanner scanner) {

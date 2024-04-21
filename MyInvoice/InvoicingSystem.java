@@ -30,26 +30,7 @@ public class InvoicingSystem {
         String phoneNumber = scanner.nextLine();
         Menue.invoice1.phoneNumber = phoneNumber;
 
-        while (true) {
-            System.out.println("What are you buying? When you are done, type " + "done ");
-            String input = scanner.nextLine();
-            if (input.equals("done")) {
-                break;
-            }
-            Item obj = new Item();
-            obj.itemName = input;
-            obj.itemId = (int) (Math.random() * (253 - 1 + 1) + 1);
-            obj.unitPrice = (int) (Math.random() * (5 - 1 + 1) + 1);
-            System.out.println("How many " + obj.itemName + " do you want? ");
-            obj.quantity = scanner.nextInt();
-            scanner.nextLine();
-
-
-
-            items.add(obj);
-        }
-        Menue.invoice1.items = items;
-        items.toString();
+        Menue.addItems(scanner);
 
         Menue.showMainMenu();
 
