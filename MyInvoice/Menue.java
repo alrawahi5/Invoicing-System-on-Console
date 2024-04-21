@@ -125,7 +125,7 @@ public class Menue {
     static InvoicingSystem invoSy1 = new InvoicingSystem();
 
     static void createNewInvoice(Scanner scanner) {
-
+        InvoicingSystem.main(null);
     }
 
     static void reportStatistics() {
