@@ -186,7 +186,6 @@ public class Menue {
     }
 
     static void addItems(Scanner scanner) {
-
         while (true) {
             System.out.println("What are you buying? When you are done, type " + "done ");
             String input = scanner.nextLine();
@@ -208,7 +207,29 @@ public class Menue {
     }
 
     static void deleteItems(Scanner scanner) {
+        HashMap<Double, Item> itemHashMap = new HashMap<>();
+        for (Item i : InvoicingSystem.items) {
+            itemHashMap.put(i.itemId, i);
+        }
 
+        System.out.println("Choose the item that you want to remove: ");
+        for (Item element : InvoicingSystem.items) {
+            System.out.println(element.itemId + "-- " + "Item name is: " + element.itemName);
+            count1++;
+        }
+
+        System.out.print("Enter your choice: ");
+        Double choice = scanner.nextDouble();
+        scanner.nextLine();
+
+        if (itemHashMap.containsKey(choice)) {
+            itemHashMap.remove(choice);
+            InvoicingSystem.items = itemHashMap.values().stream().toList();
+
+            for (Item element : InvoicingSystem.items) {
+                System.out.println(element.itemId + "-- " + "Item name is: " + element.itemName);
+            }
+        }
     }
 
     static void changeItemPrice(Scanner scanner) {
@@ -227,13 +248,6 @@ public class Menue {
         System.out.print("Enter your choice: ");
         Double choice = scanner.nextDouble();
         scanner.nextLine();
-//        if (choice == count1) {
-//            for (Item element : InvoicingSystem.items) {
-//                element.unitPrice = (int) (Math.random() * (9 - 7 + 1) + 7);
-//                System.out.println(count1 + "-- " + "Item is: " + element.itemName + " and its changed price is; " + element.unitPrice);
-//            }
-//            System.out.println("Invalid choice, please try again.");
-//        }
 
         if (itemHashMap.containsKey(choice)) {
             Item itemObjToChange = itemHashMap.get(choice);
