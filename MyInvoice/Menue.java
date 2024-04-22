@@ -209,24 +209,30 @@ public class Menue {
     }
 
     static void changeItemPrice(Scanner scanner) {
-        Item obj = new Item();
-        System.out.println("Choose the item that you want to change its price: ");
+        while (true) {
+            Item obj = new Item();
+            System.out.println("Choose the item that you want to change its price: ");
 //       Item a =  InvoicingSystem.items.get((int) item1.unitPrice);
-        for (Item element : InvoicingSystem.items) {
-            System.out.println("Item name is: " + element.itemName);
-        }
-
-        //System.out.println(a);
-        double b = item1.unitPrice;
-        System.out.println(b);
-
-        int count = 0;
-        for(int i = 0; i<InvoicingSystem.items.size(); i++){
-            String input = scanner.nextLine();
-            if (input.equals("done")) {
-                break;
+            int count1 = 1;
+            for (Item element : InvoicingSystem.items) {
+                System.out.println(count1 + "-- " + "Item name is: " + element.itemName + " and its current price is; " + element.unitPrice);
+                count1++;
             }
-            obj.unitPrice = (int) (Math.random() * (5 - 1 + 1) + 1);
+
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+
+            if (choice == count1) {
+                for (Item element : InvoicingSystem.items) {
+                    element.unitPrice = (int) (Math.random() * (9 - 7 + 1) + 7);
+
+                }
+                    System.out.println("Invalid choice, please try again.");
+            }
+            break;
+            
         }
 
     }
