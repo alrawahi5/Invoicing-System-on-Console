@@ -1,10 +1,13 @@
 package MyInvoice;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Menue {
     //ShopSettings shopSettings1 = new ShopSettings();
+    static int count1 = 1;
+
     static void showMainMenu() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -209,32 +212,43 @@ public class Menue {
     }
 
     static void changeItemPrice(Scanner scanner) {
-        while (true) {
-            Item obj = new Item();
-            System.out.println("Choose the item that you want to change its price: ");
-//       Item a =  InvoicingSystem.items.get((int) item1.unitPrice);
-            int count1 = 1;
-            for (Item element : InvoicingSystem.items) {
-                System.out.println(count1 + "-- " + "Item name is: " + element.itemName + " and its current price is; " + element.unitPrice);
-                count1++;
-            }
+        HashMap<Double, Item> itemHashMap = new HashMap<>();
 
-            System.out.print("Enter your choice: ");
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+        for (Item i : InvoicingSystem.items) {
+            itemHashMap.put(i.itemId, i);
+        }
+        System.out.println("Choose the item that you want to change its price: ");
 
-
-            if (choice == count1) {
-                for (Item element : InvoicingSystem.items) {
-                    element.unitPrice = (int) (Math.random() * (9 - 7 + 1) + 7);
-
-                }
-                    System.out.println("Invalid choice, please try again.");
-            }
-            break;
-            
+        for (Item element : InvoicingSystem.items) {
+            System.out.println(element.itemId + "-- " + "Item name is: " + element.itemName + " and its current price is; " + element.unitPrice);
+            count1++;
         }
 
+        System.out.print("Enter your choice: ");
+        Double choice = scanner.nextDouble();
+        scanner.nextLine();
+//        if (choice == count1) {
+//            for (Item element : InvoicingSystem.items) {
+//                element.unitPrice = (int) (Math.random() * (9 - 7 + 1) + 7);
+//                System.out.println(count1 + "-- " + "Item is: " + element.itemName + " and its changed price is; " + element.unitPrice);
+//            }
+//            System.out.println("Invalid choice, please try again.");
+//        }
+
+        if (itemHashMap.containsKey(choice)) {
+            Item itemObjToChange = itemHashMap.get(choice);
+            System.out.println("Original Item: " + itemObjToChange.toString());
+            itemObjToChange.unitPrice = (int) (Math.random() * (9 - 7 + 1) + 7);
+            System.out.println("Modified Item: " + itemObjToChange.toString());
+
+            itemHashMap.remove(choice);
+            itemHashMap.put(itemObjToChange.itemId, itemObjToChange);
+            InvoicingSystem.items = itemHashMap.values().stream().toList();
+
+            for (Item element : InvoicingSystem.items) {
+                System.out.println(element.itemId + "-- " + "Item name is: " + element.itemName + " and its changed price is; " + element.unitPrice);
+            }
+        }
     }
 
     static void reportAllItems() {
