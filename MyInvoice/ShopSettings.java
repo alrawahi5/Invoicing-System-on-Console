@@ -22,4 +22,12 @@ public class ShopSettings {
     public void setInvoiceHeader(String invoiceHeader) {
         this.invoiceHeader = invoiceHeader;
     }
+
+    @Override
+    public String toString() {
+        return "ShopSettings{" +
+                "shopName='" + shopName + '\'' +
+                ", invoiceHeader='" + invoiceHeader + '\'' +
+                '}';
+    }
 }
