@@ -11,6 +11,38 @@ public class InvoicingSystem {
     private static List<Invoice> invoices = new ArrayList<>();
     static Invoice invoice1 = new Invoice();
 
+    public static ShopSettings getShopSettings() {
+        return shopSettings;
+    }
+
+    public static void setShopSettings(ShopSettings shopSettings) {
+        InvoicingSystem.shopSettings = shopSettings;
+    }
+
+    public static List<Item> getItems() {
+        return items;
+    }
+
+    public static void setItems(List<Item> items) {
+        InvoicingSystem.items = items;
+    }
+
+    public static List<Invoice> getInvoices() {
+        return invoices;
+    }
+
+    public static void setInvoices(List<Invoice> invoices) {
+        InvoicingSystem.invoices = invoices;
+    }
+
+    public static Invoice getInvoice1() {
+        return invoice1;
+    }
+
+    public static void setInvoice1(Invoice invoice1) {
+        InvoicingSystem.invoice1 = invoice1;
+    }
+
     @Override
     public String toString() {
         for (int i = 0; i < items.size(); i++) {
