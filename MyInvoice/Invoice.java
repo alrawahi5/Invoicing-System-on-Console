@@ -77,5 +77,17 @@ public class Invoice {
         this.balance = balance;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Invoice{" +
+                "invoiceNo=" + invoiceNo +
+                ", customerFullName='" + customerFullName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", invoiceDate=" + invoiceDate +
+                ", items=" + items +
+                ", totalAmount=" + totalAmount +
+                ", paidAmount=" + paidAmount +
+                ", balance=" + balance +
+                '}';
+    }
 }

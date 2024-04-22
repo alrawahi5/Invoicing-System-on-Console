@@ -8,6 +8,7 @@ public class Menue {
     //ShopSettings shopSettings1 = new ShopSettings();
     static int count1 = 1;
 
+
     static void showMainMenu() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
