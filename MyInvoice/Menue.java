@@ -89,7 +89,7 @@ public class Menue {
             System.out.println("Manage Shop Items Menu:");
             System.out.println("1. Add Items");
             System.out.println("2. Delete Items");
-            System.out.println("3. Change MyInvoice.Item Price");
+            System.out.println("3. Change Item Price");
             System.out.println("4. Report All Items");
             System.out.println("5. Go Back");
 
@@ -171,7 +171,6 @@ public class Menue {
             System.out.println("Added Items: " + i.toString());
         }
 
-        //use the random class for the item amount then sum them up
         System.out.println("The total amout: " + invoice1.totalAmount);
 
         System.out.println("The paid amount is: " + invoice1.paidAmount);
@@ -210,6 +209,25 @@ public class Menue {
     }
 
     static void changeItemPrice(Scanner scanner) {
+        Item obj = new Item();
+        System.out.println("Choose the item that you want to change its price: ");
+//       Item a =  InvoicingSystem.items.get((int) item1.unitPrice);
+        for (Item element : InvoicingSystem.items) {
+            System.out.println("Item name is: " + element.itemName);
+        }
+
+        //System.out.println(a);
+        double b = item1.unitPrice;
+        System.out.println(b);
+
+        int count = 0;
+        for(int i = 0; i<InvoicingSystem.items.size(); i++){
+            String input = scanner.nextLine();
+            if (input.equals("done")) {
+                break;
+            }
+            obj.unitPrice = (int) (Math.random() * (5 - 1 + 1) + 1);
+        }
 
     }
 
