@@ -105,7 +105,7 @@ public class Invoice {
     public static double calculateTotalAmount(List<Item> items) {
         double total = 0d;
         for (Item i: items) {
-            total += i.unitPrice;
+            total += (i.unitPrice * i.quantity);
         }
 
         return total;
