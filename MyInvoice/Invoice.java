@@ -2,6 +2,7 @@ package MyInvoice;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Invoice {
     public int invoiceNo;
@@ -37,12 +38,19 @@ public class Invoice {
         this.phoneNumber = phoneNumber;
     }
 
+    public Invoice() {
+        //this.invoiceDate = new Date();
+        Date invoDate = new Date();
+        invoiceDate = invoDate;
+    }
+
     public Date getInvoiceDate() {
         return invoiceDate;
     }
 
     public void setInvoiceDate(Date invoiceDate) {
-        this.invoiceDate = invoiceDate;
+        Date invoDate = new Date();
+        invoiceDate = invoDate;
     }
 
     public List<Item> getItems() {

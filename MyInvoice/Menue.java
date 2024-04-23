@@ -137,6 +137,12 @@ public class Menue {
     }
 
     static void reportAllInvoices() {
+        System.out.println("The invoce number is: " + invoice1.getInvoiceNo());
+        System.out.println("The invoce date is: " + invoice1.getInvoiceDate());
+        System.out.println("Customer full name is: " + invoice1.getCustomerFullName());
+        System.out.println("The number of items is: " + item1.getQuantity());
+        System.out.println("The total amount is: " + invoice1.getTotalAmount());
+        System.out.println("The balance is: " + invoice1.getBalance());
 
     }
 
@@ -166,10 +172,10 @@ public class Menue {
         System.out.println("Customer name is: " + invoice1.customerFullName);
 
         System.out.println("Customer phone number: " + invoice1.phoneNumber);
-
-        Date invoDate = new Date();
-        invoice1.invoiceDate = invoDate;
-        System.out.println("Invoice date: " + invoDate);
+        
+        Date inDate = new Date();
+        invoice1.setInvoiceDate(inDate);
+        System.out.println("Invoice date: " + invoice1.getInvoiceDate());
 
         for (Item i : invoice1.items) {
             System.out.println("Added Items: " + i.toString());
