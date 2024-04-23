@@ -62,6 +62,7 @@ public class InvoicingSystem {
         System.out.println("Enter your phone number: ");
         String phoneNumber = scanner.nextLine();
         Menue.invoice1.phoneNumber = phoneNumber;
+        invoice1.setPhoneNumber(phoneNumber);
 
         Menue.addItems(scanner);
 
