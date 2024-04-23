@@ -177,7 +177,7 @@ public class Menue {
 
         System.out.println("Customer name is: " + invoice1.getCustomerFullName());
 
-        System.out.println("Customer phone number: " + invoice1.phoneNumber);
+        System.out.println("Customer phone number: " + invoice1.getPhoneNumber());
 
         Date inDate = new Date();
         invoice1.setInvoiceDate(inDate);
@@ -187,7 +187,8 @@ public class Menue {
             System.out.println("Added Items: " + i.toString());
         }
 
-        System.out.println("The total amout: " + invoice1.totalAmount);
+        invoice1.setTotalAmount(Invoice.calculateTotalAmount(invoice1.getItems())); ///<-
+        System.out.println("The total amout: " + invoice1.getTotalAmount());
 
         System.out.println("The paid amount is: " + invoice1.paidAmount);
     }
