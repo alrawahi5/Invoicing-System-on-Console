@@ -169,13 +169,13 @@ public class Menue {
 
         int count = 1;
         for (int i = 1; i<InvoicingSystem.items.size(); i++){
-            //invoice1.invoiceNo = count;
             count++;
         }
         invoice1.setInvoiceNo(count);
+
         System.out.println("Invoice No is: " + invoice1.getInvoiceNo());
 
-        System.out.println("Customer name is: " + invoice1.customerFullName);
+        System.out.println("Customer name is: " + invoice1.getCustomerFullName());
 
         System.out.println("Customer phone number: " + invoice1.phoneNumber);
 

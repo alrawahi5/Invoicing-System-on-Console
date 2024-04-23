@@ -57,6 +57,7 @@ public class InvoicingSystem {
         System.out.println("Enter your full name: ");
         String a = scanner.nextLine();
         Menue.invoice1.customerFullName = a;
+        invoice1.setCustomerFullName(a);
 
         System.out.println("Enter your phone number: ");
         String phoneNumber = scanner.nextLine();
