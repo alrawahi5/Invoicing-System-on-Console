@@ -194,6 +194,15 @@ public class Menue {
     }
 
     static void setInvoiceHeader(Scanner scanner) {
+        scanner = new Scanner(System.in);
+        System.out.println("Enter your phone number: ");
+        String phoneN = scanner.nextLine();
+        System.out.println("Enter your fax: ");
+        String fax = scanner.nextLine();
+        System.out.println("Enter your email: ");
+        String email = scanner.nextLine();
+        System.out.println("Enter your website: ");
+        String website = scanner.nextLine();
 
     }
 
@@ -278,7 +287,8 @@ public class Menue {
     }
 
     static void reportAllItems() {
-
+        Scanner scanner = new Scanner(System.in);
+        Menue.loadData(scanner);
     }
 }
 
