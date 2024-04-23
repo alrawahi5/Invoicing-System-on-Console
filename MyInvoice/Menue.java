@@ -166,13 +166,19 @@ public class Menue {
 
     static void loadData(Scanner scanner) {
         System.out.println("Shop name is: " + shopSettings1.shopName);
-        //invoice1.invoiceNo = Randome
-        System.out.println("Invoice No is: " + invoice1.invoiceNo);
+
+        int count = 1;
+        for (int i = 1; i<InvoicingSystem.items.size(); i++){
+            //invoice1.invoiceNo = count;
+            count++;
+        }
+        invoice1.setInvoiceNo(count);
+        System.out.println("Invoice No is: " + invoice1.getInvoiceNo());
 
         System.out.println("Customer name is: " + invoice1.customerFullName);
 
         System.out.println("Customer phone number: " + invoice1.phoneNumber);
-        
+
         Date inDate = new Date();
         invoice1.setInvoiceDate(inDate);
         System.out.println("Invoice date: " + invoice1.getInvoiceDate());
@@ -184,8 +190,6 @@ public class Menue {
         System.out.println("The total amout: " + invoice1.totalAmount);
 
         System.out.println("The paid amount is: " + invoice1.paidAmount);
-
-
     }
 
     static void setInvoiceHeader(Scanner scanner) {
