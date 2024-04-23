@@ -150,7 +150,13 @@ public class Menue {
     }
 
     static void searchInvoices(Scanner scanner) {
+        scanner = new Scanner(System.in);
+        System.out.println("Enter the invoice number: ");
+        int invoiceN = scanner.nextInt();
 
+            if(invoiceN == invoice1.getInvoiceNo()){
+                loadData(scanner);
+            }
     }
 
     static void programStatistics() {
