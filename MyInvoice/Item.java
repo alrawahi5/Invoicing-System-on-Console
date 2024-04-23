@@ -1,5 +1,7 @@
 package MyInvoice;
 
+import java.util.List;
+
 public class Item {
     public double itemId;
     public String itemName;
@@ -46,5 +48,13 @@ public class Item {
                 ", unitPrice=" + unitPrice +
                 ", quantity=" + quantity +
                 '}';
+    }
+
+    public static int itemsQuatity(List<Item> items) {
+        int quantity = 0;
+        for (Item i : items) {
+            quantity += i.quantity;
+        }
+        return quantity;
     }
 }

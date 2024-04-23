@@ -133,7 +133,10 @@ public class Menue {
     }
 
     static void reportStatistics() {
-
+        System.out.println("Number of items is: " + Item.itemsQuatity(Menue.invoice1.items));
+        System.out.println("The number of invoives is: " + invoice1.getInvoiceNo());
+        invoice1.setTotalAmount(Invoice.calculateTotalAmount(invoice1.getItems()));
+        System.out.println("The total sales is: " + invoice1.getTotalAmount());
     }
 
     static void reportAllInvoices() {
@@ -168,7 +171,7 @@ public class Menue {
         System.out.println("Shop name is: " + shopSettings1.shopName);
 
         int count = 1;
-        for (int i = 1; i<InvoicingSystem.items.size(); i++){
+        for (int i = 1; i < InvoicingSystem.items.size(); i++) {
             count++;
         }
         invoice1.setInvoiceNo(count);
@@ -191,6 +194,8 @@ public class Menue {
         System.out.println("The total amout: " + invoice1.getTotalAmount());
 
         System.out.println("The paid amount is: " + invoice1.paidAmount);
+
+        item1.setQuantity(Item.itemsQuatity(InvoicingSystem.items));
     }
 
     static void setInvoiceHeader(Scanner scanner) {
