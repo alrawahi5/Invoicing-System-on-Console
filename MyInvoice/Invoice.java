@@ -85,6 +85,7 @@ public class Invoice {
     }
 
     public void setBalance(double balance) {
+
         this.balance = balance;
     }
 
