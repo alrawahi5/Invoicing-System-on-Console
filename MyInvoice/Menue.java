@@ -213,12 +213,16 @@ public class Menue {
 
         for (Item i : invoice1.items) {
             System.out.println("Added Items: " + i.toString());
+
         }
 
         invoice1.setTotalAmount(Invoice.calculateTotalAmount(invoice1.getItems())); ///<-
         System.out.println("The total amout: " + invoice1.getTotalAmount());
 
-        System.out.println("The paid amount is: " + invoice1.paidAmount);
+        System.out.println("How much do you want to pay? ");
+        double paid = scanner.nextDouble();
+        invoice1.setPaidAmount(paid);
+        System.out.println("The paid amount is: " + invoice1.getPaidAmount());
 
         item1.setQuantity(Item.itemsQuatity(InvoicingSystem.items));
     }
