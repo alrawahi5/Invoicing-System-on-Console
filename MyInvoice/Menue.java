@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Menue {
     //ShopSettings shopSettings1 = new ShopSettings();
     static int count1 = 1;
-
+    public static HashMap <Integer, Integer> optionCounts;
 
     static void showMainMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -25,6 +25,8 @@ public class Menue {
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
+
+            countOption(choice);
 
             switch (choice) {
                 case 1:
@@ -69,6 +71,7 @@ public class Menue {
             int choice = scanner.nextInt();
             scanner.nextLine();
 
+            countOption(choice);
 
             switch (choice) {
                 case 1:
@@ -101,6 +104,8 @@ public class Menue {
             int choice = scanner.nextInt();
             scanner.nextLine();
 
+            countOption(choice);
+
             switch (choice) {
                 case 1:
                     addItems(scanner);
@@ -119,6 +124,24 @@ public class Menue {
                 default:
                     System.out.println("Invalid choice, please try again.");
             }
+        }
+    }
+
+    public static void countOption(int option) {
+        if (optionCounts == null) {
+            optionCounts = new HashMap<>();
+        }
+        if (optionCounts.containsKey(option)) {
+            int count = optionCounts.get(option);
+            optionCounts.put(option, count + 1);
+        } else {
+            optionCounts.put(option, 1);
+        }
+    }
+
+    public static void programStatistics() {
+        for (Integer option : optionCounts.keySet()) {
+            System.out.println("Option " + option + " has been visited " + optionCounts.getOrDefault(option, 0) + " times.");
         }
     }
 
@@ -157,10 +180,6 @@ public class Menue {
             if(invoiceN == invoice1.getInvoiceNo()){
                 loadData(scanner);
             }
-    }
-
-    static void programStatistics() {
-
     }
 
     static void setShopName(Scanner scanner) {
