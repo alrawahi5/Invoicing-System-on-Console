@@ -2,6 +2,7 @@ package MyInvoice;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menue {
@@ -14,39 +15,46 @@ public class Menue {
         while (true) {
             System.out.println(MenuForOptions.mainMenu);
 
-            System.out.print("Enter your choice: ");
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+            try {
+                System.out.print("Enter your choice: ");
+                int choice = 0;
+                choice = scanner.nextInt();
+                scanner.nextLine();
 
-            countOption(choice);
+                countOption(choice);
 
-            switch (choice) {
-                case 1:
-                    shopSettingsMenu(scanner);
-                    break;
-                case 2:
-                    manageShopItemsMenu(scanner);
-                    break;
-                case 3:
-                    createNewInvoice(scanner);
-                    break;
-                case 4:
-                    reportStatistics();
-                    break;
-                case 5:
-                    reportAllInvoices();
-                    break;
-                case 6:
-                    searchInvoices(scanner);
-                    break;
-                case 7:
-                    programStatistics();
-                    break;
-                case 8:
-                    System.out.println("Exiting...");
-                    return;
-                default:
-                    System.out.println("Invalid choice, please try again.");
+                switch (choice) {
+                    case 1:
+                        shopSettingsMenu(scanner);
+                        break;
+                    case 2:
+                        manageShopItemsMenu(scanner);
+                        break;
+                    case 3:
+                        createNewInvoice(scanner);
+                        break;
+                    case 4:
+                        reportStatistics();
+                        break;
+                    case 5:
+                        reportAllInvoices();
+                        break;
+                    case 6:
+                        searchInvoices(scanner);
+                        break;
+                    case 7:
+                        programStatistics();
+                        break;
+                    case 8:
+                        System.out.println("Exiting...");
+                        return;
+                    default:
+                        System.out.println("Invalid choice, please try again.");
+                }
+            }
+            catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter your choice number: ");
+                scanner.nextLine();
             }
         }
     }
