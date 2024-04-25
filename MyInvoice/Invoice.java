@@ -1,9 +1,7 @@
 package MyInvoice;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Scanner;
 
 public class Invoice {
     public int invoiceNo;
@@ -105,7 +103,7 @@ public class Invoice {
 
     public static double calculateTotalAmount(List<Item> items) {
         double total = 0d;
-        for (Item i: items) {
+        for (Item i : items) {
             total += (i.unitPrice * i.quantity);
         }
 

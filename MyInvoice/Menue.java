@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Menue {
     //ShopSettings shopSettings1 = new ShopSettings();
     static int count1 = 1;
-    public static HashMap <Integer, Integer> optionCounts;
+    public static HashMap<Integer, Integer> optionCounts;
 
     static void showMainMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -151,9 +151,9 @@ public class Menue {
         System.out.println("Enter the invoice number: ");
         int invoiceN = scanner.nextInt();
 
-            if(invoiceN == invoice1.getInvoiceNo()){
-                loadData(scanner);
-            }
+        if (invoiceN == invoice1.getInvoiceNo()) {
+            loadData(scanner);
+        }
     }
 
     static void setShopName(Scanner scanner) {
@@ -314,5 +314,3 @@ public class Menue {
         Menue.loadData(scanner);
     }
 }
-
-
