@@ -12,15 +12,7 @@ public class Menue {
     static void showMainMenu() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("Main Menu:");
-            System.out.println("1. Shop Settings");
-            System.out.println("2. Manage Shop Items");
-            System.out.println("3. Create New Invoice");
-            System.out.println("4. Report: Statistics");
-            System.out.println("5. Report: All Invoices");
-            System.out.println("6. Search Invoices");
-            System.out.println("7. Program Statistics");
-            System.out.println("8. Exit");
+            System.out.println(MenuForOptions.mainMenu);
 
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
@@ -61,11 +53,7 @@ public class Menue {
 
     static void shopSettingsMenu(Scanner scanner) {
         while (true) {
-            System.out.println("Shop Settings Menu:");
-            System.out.println("1. Load Data (Items and Invoices)");
-            System.out.println("2. Set Shop Name");
-            System.out.println("3. Set Invoice Header (Tel / Fax / Email / Website)");
-            System.out.println("4. Go Back");
+            System.out.println(MenuForOptions.shopSettingMenu);
 
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
@@ -93,12 +81,7 @@ public class Menue {
 
     static void manageShopItemsMenu(Scanner scanner) {
         while (true) {
-            System.out.println("Manage Shop Items Menu:");
-            System.out.println("1. Add Items");
-            System.out.println("2. Delete Items");
-            System.out.println("3. Change Item Price");
-            System.out.println("4. Report All Items");
-            System.out.println("5. Go Back");
+            System.out.println(MenuForOptions.manageShopItemsMenu);
 
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
