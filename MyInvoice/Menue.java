@@ -162,17 +162,6 @@ public class Menue {
         System.out.println("The total sales is: " + invoice1.getTotalAmount());
     }
 
-    static void reportAllInvoices() {
-        System.out.println("The invoce number is: " + invoice1.getInvoiceNo());
-        System.out.println("The invoce date is: " + invoice1.getInvoiceDate());
-        System.out.println("Customer full name is: " + invoice1.getCustomerFullName());
-        System.out.println("The number of items is: " + item1.getQuantity());
-        System.out.println("The total amount is: " + invoice1.getTotalAmount());
-        double balance = invoice1.getTotalAmount() - invoice1.getPaidAmount();
-        invoice1.setBalance(balance);
-        System.out.println("The balance is: " + invoice1.getBalance());
-
-    }
 
     static void searchInvoices(Scanner scanner) {
         scanner = new Scanner(System.in);
@@ -227,6 +216,21 @@ public class Menue {
         System.out.println("The paid amount is: " + invoice1.getPaidAmount());
 
         item1.setQuantity(Item.itemsQuatity(InvoicingSystem.items));
+    }
+
+    static void reportAllInvoices() {
+        System.out.println("The invoce number is: " + invoice1.getInvoiceNo());
+        System.out.println("The invoce date is: " + invoice1.getInvoiceDate());
+        System.out.println("Customer full name is: " + invoice1.getCustomerFullName());
+        System.out.println("The number of items is: " + item1.getQuantity());
+        System.out.println("The total amount is: " + invoice1.getTotalAmount());
+        double balance = invoice1.getTotalAmount() - invoice1.getPaidAmount();
+        invoice1.setBalance(balance);
+        System.out.println("The balance is: " + invoice1.getBalance());
+
+        invoice1.setTotalAmount(invoice1.getBalance());//
+        invoice1.getTotalAmount(); //
+
     }
 
     static void setInvoiceHeader(Scanner scanner) {
