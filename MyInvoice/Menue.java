@@ -56,6 +56,9 @@ public class Menue {
                 System.out.println("Invalid input. Please enter your choice number: ");
                 scanner.nextLine();
             }
+            catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 
@@ -63,26 +66,31 @@ public class Menue {
         while (true) {
             System.out.println(MenuForOptions.shopSettingMenu);
 
-            System.out.print("Enter your choice: ");
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+            try {
+                System.out.print("Enter your choice: ");
+                int choice = scanner.nextInt();
+                scanner.nextLine();
 
-            countOption(choice);
+                countOption(choice);
 
-            switch (choice) {
-                case 1:
-                    loadData(scanner); //
-                    break;
-                case 2:
-                    setShopName(scanner);
-                    break;
-                case 3:
-                    setInvoiceHeader(scanner);
-                    break;
-                case 4:
-                    return;
-                default:
-                    System.out.println("Invalid choice, please try again.");
+                switch (choice) {
+                    case 1:
+                        loadData(scanner); //
+                        break;
+                    case 2:
+                        setShopName(scanner);
+                        break;
+                    case 3:
+                        setInvoiceHeader(scanner);
+                        break;
+                    case 4:
+                        return;
+                    default:
+                        System.out.println("Invalid choice, please try again.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter your choice number: ");
+                scanner.nextLine();
             }
         }
     }
