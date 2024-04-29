@@ -60,6 +60,13 @@ public class InvoicingSystem {
         return matcher.matches();
     }
 
+    public static boolean isValidPhoneN(String inputV) {
+        String regex = "\\d+";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(inputV);
+        return matcher.matches();
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String name = null;
@@ -81,11 +88,24 @@ public class InvoicingSystem {
             }
         }
 
-
-        System.out.println("Enter your phone number: ");
-        String phoneNumber = scanner.nextLine();
+        //System.out.println("Enter your phone number: ");
+        String phoneNumber = null;
         Menue.invoice1.phoneNumber = phoneNumber;
         invoice1.setPhoneNumber(phoneNumber);
+
+        while (phoneNumber == null){
+            try {
+                System.out.println("Enter your phone number: ");
+                phoneNumber   = scanner.nextLine();
+
+                if (!isValidPhoneN(phoneNumber)) {
+                    throw new IllegalArgumentException("Invalid input. ");
+                }
+            } catch (Exception e) {
+                System.out.print(e.getMessage());
+                phoneNumber = null;
+            }
+        }
 
         Menue.addItems(scanner);
 
