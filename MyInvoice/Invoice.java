@@ -3,7 +3,7 @@ package MyInvoice;
 import java.util.Date;
 import java.util.List;
 
-public class Invoice {
+public class Invoice implements InvoiceInterface{
     public int invoiceNo;
     public String customerFullName;
     public String phoneNumber;
@@ -101,7 +101,7 @@ public class Invoice {
                 '}';
     }
 
-    public static double calculateTotalAmount(List<Item> items) {
+    static double calculateTotalAmount(List<Item> items) {
         double total = 0d;
         for (Item i : items) {
             total += (i.unitPrice * i.quantity);

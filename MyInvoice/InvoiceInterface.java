@@ -43,7 +43,7 @@ public interface InvoiceInterface {
     @Override
     String toString();
 
-    default double calculateTotalAmount(List<Item> items) {
+    static double calculateTotalAmount(List<Item> items) {
         double total = 0d;
         for (Item i : items) {
             total += (i.unitPrice * i.quantity);
@@ -51,5 +51,4 @@ public interface InvoiceInterface {
 
         return total;
     }
-
 }
