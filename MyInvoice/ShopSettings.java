@@ -1,6 +1,6 @@
 package MyInvoice;
 
-public class ShopSettings {
+public class ShopSettings implements ShopSettingInterface{
     public String shopName;
     private String invoiceHeader;
     //... add something?
