@@ -23,7 +23,7 @@ public interface ItemInnterface {
     @Override
     String toString();
 
-    default int itemsQuatity(List<MyInvoice.Item> items) {
+    static int itemsQuatity(List<MyInvoice.Item> items) {
         int quantity = 0;
         for (MyInvoice.Item i : items) {
             quantity += i.quantity;
