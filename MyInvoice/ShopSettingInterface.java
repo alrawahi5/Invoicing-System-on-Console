@@ -1,3 +1,5 @@
+package MyInvoice;
+
 public interface ShopSettingInterface {
 
     String getShopName();
